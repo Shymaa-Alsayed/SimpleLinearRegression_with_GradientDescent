@@ -43,10 +43,6 @@ y = data.iloc[:, 1].values.reshape((-1, 1))
 # Length of training examples
 m = len(y)
 
-# Visualizing our data
-plt.scatter(X, y)
-plt.show()
-
 # Initialize weights or theta0 and theta1
 theta = np.zeros((2, 1)).astype(float)
 
@@ -64,6 +60,11 @@ min_theta = gradient_descent(X, theta, y)
 minimum_cost = cost(X, min_theta, y, m)
 print('Minimum cost: ', minimum_cost)
 
+## VISUALS ##
+
+# Visualizing our raw data
+plt.scatter(X, y)
+plt.show()
 
 # Visualizing hypothesis on the training set
 predictions_of_training_set = []
@@ -73,7 +74,7 @@ plt.scatter(X, y)
 plt.plot(X, predictions_of_training_set, color='green')
 plt.show()
 
-# Predict new instance
+## Predict new instance ##
 new_instance = 17
 print('Predicted value: ', predict(new_instance, min_theta))
 
